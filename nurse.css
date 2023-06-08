@@ -181,9 +181,9 @@ ul{
 }
 
 /* On hover, add a black background color with a little bit see-through */
-.prev:hover, .next:hover {
+/* .prev:hover, .next:hover {
   background-color: blue;
-}
+} */
 
 /* Caption text */
 .text {
@@ -253,12 +253,12 @@ ul{
 
 @-webkit-keyframes fade {
   from {opacity: .4} 
-  to {opacity: 1}
+  to {opacity: 2}
 }
 
 @keyframes fade {
   from {opacity: .4} 
-  to {opacity: 1}
+  to {opacity: 2}
 }
 /* Welcome################################################################## */
 .welcome{
