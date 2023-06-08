@@ -1,0 +1,825 @@
+:root{
+    --poppins: 'poppins', sans-serif;
+    --catamaran: 'catamaran', sans-serif;
+    --transition: all 0.3s ease-in-out;
+    --orange: #eb2f06;
+    --light-orange: #e55039;
+    --blue: #1e3799;
+    --light-blue: #4a69bd;
+    --light-gray: #f1f1f1;
+}
+*{
+    padding: 0;
+    box-sizing: border-box;
+    margin: 0;
+    outline: none;
+    text-decoration: none;
+}
+body{
+    font-family: sans-serif;
+    /* height: 250vh; */
+    background-size: cover;
+    
+}
+html{
+    font-size: 10px;
+}
+a{
+    color: #fff;
+    font-size: 16px;
+    font-family: sans-serif;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--catamaran);
+    line-height: 1.3;
+}
+.navbar-brand span img{
+    width: 100px;
+    display: block;
+    position: relative;
+}
+.btn{
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+}
+ul{
+    list-style-type: none;
+}
+.container{
+    max-width: 1320px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.flex{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.navbar{
+    background-color: rgb(141, 247, 247);
+    background-image: linear-gradient(90deg, #0675eb 0%, blue 100%);
+    height: 80px;
+    width: 100%;
+}
+.navbar .container{
+    flex-direction: column;
+    height: 100%;
+}
+.brand-and-toggler{
+    justify-content: space-between;
+    width: 100%;
+}
+.navbar-brand{
+    color: #fff;
+    letter-spacing: .3rem;
+    font-size: 2rem;
+    transition: var(--transition);
+}
+
+.navbar-toggler-open, .navbar-toggler-close{
+    font-size: 3rem;
+    color: #fff;
+    transition: var(--transition);
+}
+.navbar-toggler-open:hover, .navbar-toggler-close:hover{
+    transform: scale(1.2);
+}
+.navbar-collapse{
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 170px;
+    height: 100%;
+    background-color: blue;
+    border-left: 1px solid rgba(0, 0, 0, 0.2);
+    padding: 2rem 3rem;
+    transform: translateX(100%);
+    transition: var(--transition);
+    z-index: 999;
+}
+.navbarShow{
+    transform: translateX(0);
+}
+.navbar-toggler-close{
+    margin-left: 0;
+    color: #fff;
+}
+.navbar-nav{
+    margin-top: 2rem;
+}
+.nav-item{
+    margin: 1.5rem 0;
+}
+.nav-link{
+    position: relative;
+    transition: var(--transition);
+    font-size: 1.8rem;
+}
+.nav-link::after{
+    position: absolute;
+    content: "";
+    top: 100%;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #000;
+    transition: var(--transition);
+}
+.nav-link:hover{
+    color: aquamarine;
+}
+.nav-link:hover::after{
+    background-color: aquamarine;
+    width: 100%;
+}
+.resize-transition-stopper *{
+    transition: none!important;
+} 
+
+
+/* slideshow-container########################################################### */
+.mySlides {
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+.mySlides img {
+    vertical-align: middle;
+    width: 100%;
+    height: 50vh;
+}
+
+/* Slideshow container */
+.slideshow-container {
+  /* max-width: 1000px; */
+  position: relative;
+  margin: auto;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: red;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: blue;
+}
+
+/* Caption text */
+.text {
+  color: #000;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+  height: 45%;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background-image: linear-gradient(rgba(78,0,225,0.75), rgba(7,0,60,0.85));
+  padding: 20px 60px;
+  color: #fff;
+  text-align: center;
+}
+.text h1{
+    font-size: 18px;
+}
+.text p{
+    position: relative;
+    font-size: 16px;
+    line-height: 25px;
+    top: 10px;
+}
+/* .text button{
+    padding: 5px 10px;
+    font-size: 16px;
+    margin-top: 10px;
+} */
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+/* Welcome################################################################## */
+.welcome{
+    text-align: center;
+    margin: 10px 20px 10px;
+}
+.wel{
+    border: 1px solid transparent;
+    background-color: #bbb;
+}
+.welcome h1{
+    position: relative;
+    font-size: 18px;
+}
+.welcome p{
+    position: relative;
+    font-size: 16px;
+    line-height: 25px;
+    padding-top: 10px;
+}
+.welcome button{
+    font-size: 16px;
+    border: 1px solid transparent;
+    border-radius: 6px;
+    background-color: blue;
+    padding: 5px 10px;
+    color: #fff;
+    margin-top: 10px;
+}
+
+
+
+/* Mission################################################################## */
+.mission{
+    text-align: center;
+    margin: 10px 20px 10px;
+    padding-top: 30px;
+}
+.mission h1{
+    position: relative;
+    font-size: 18px;
+}
+.mission p{
+    position: relative;
+    font-size: 16px;
+    line-height: 25px;
+    padding-top: 10px;
+}
+.mission button{
+    font-size: 16px;
+    border: 1px solid transparent;
+    border-radius: 6px;
+    background-color: blue;
+    padding: 5px 10px;
+    color: #fff;
+    margin-top: 10px;
+}
+
+/* Feature################################################################## */
+.feature{
+
+}
+.feat-one{
+    border: 1px solid transparent;
+    text-align: center;
+    height: 300px;
+    background-color: #0675eb;
+}
+.feat-one:nth-of-type(2){
+    background-color: #e55039;
+}
+.feat-one .feat-inner{
+    padding: 10px 30px;
+    position: relative;
+    top: 50px;
+    display: grid;
+    gap: 20px;
+}
+.feat-one .feat-inner i{
+    font-size: 20px;
+    color: #fff;
+}
+.feat-one .feat-inner h1{
+    font-size: 18px;
+    color: #fff;
+}
+.feat-one .feat-inner p{
+    font-size: 16px;
+    line-height: 25px;
+    color: #fff;
+}
+
+
+/* footer############################################################### */
+.footer-sale{
+    padding-top: 150px;
+}
+.footer h1{
+    position: relative;
+    border: 1px solid transparent;
+    width: 80%;
+    background-color: #f4511e;
+    margin: 40px;
+    
+}
+.footer-logo{
+    text-align: center;
+}
+.footer-logo img{
+    position: relative;
+    width: 100px;
+}
+.footer-contact{
+    text-align: center;
+}
+.footer-contact h3{
+    position: relative;
+    font-size: 14px;
+    font-weight: 400;
+}
+.footer-contact h3 span img{
+    width: 13px;
+}
+.numbers{
+    display: flex;
+    gap: 40px;
+    position: relative;
+    margin-left: 9px;
+    top: 20px;
+}
+.numbers h4{
+    position: relative;
+    font-size: 14px;
+    font-weight: 400;
+}
+.numbers h4 span img{
+    width: 15px;
+    position: relative;
+    right: 7px;
+}
+.numbers h5 span img{
+    width: 15px;
+    position: relative;
+    right: 14px;
+    top: 5px;
+}
+.numbers h5{
+    position: relative;
+    font-size: 14px;
+    font-weight: 400;
+}
+.socials{
+    display: flex;
+    gap: 25px;
+    position: relative;
+    top: 60px;
+    margin-left: 20px;
+}
+.socials img{
+    width: 13px;
+}
+.socials h6{
+    color: rgb(122, 118, 118);
+}
+.extralink{
+    display: flex;
+    gap: 16px;
+    margin-left: 40px;
+}
+.extralink a{
+    font-size: 10px;
+    color: #000;
+}
+.copyright{
+    text-align: center;
+}
+.copyright p{
+    font-size: 12px;
+    color: rgb(122, 118, 118);
+}
+.footer-bottom{
+    position: relative;
+    top: 60px;
+}
+.copyright{
+    position: relative;
+    top: 20px;
+}
+.line h2{
+    position: relative;
+    border: .1px solid transparent;
+    width: 80%;
+    background-color: rgb(247, 243, 243);
+    margin: 40px;
+    top: 80px; 
+}
+
+/* About######################################################################000 */
+.about{
+    text-align: center;
+    margin: 10px 20px 10px;
+    padding-top: 20px;
+}
+.about h1{
+    position: relative;
+    font-size: 18px;
+}
+.about p{
+    font-size: 16px;
+    padding-top: 10px;
+    line-height: 25px;
+}
+.picture{
+    margin: 10px 20px 10px;
+}
+.picture img{
+    width: 100%;
+}
+
+/* Admission######################################################################000 */
+.application{
+    margin-top: 20px;
+}
+.application h1{
+    font-size: 18px;
+    text-align: center;
+}
+.profile-pic{
+    margin: 10px 20px 10px;
+}
+.profile-pic img{
+    width: 100%;
+}
+.top{
+    text-align: center;
+}
+.top h2{
+    font-size: 18px;
+}
+.top p{
+    font-size: 16px;
+    line-height: 25px;
+}
+.bottom{
+    position: relative;
+    padding-top: 20px;
+    text-align: center;
+    margin-bottom: 60px;
+}
+.bottom h3{
+    font-size: 18px;
+}
+.bottom p{
+    font-size: 16px;
+    line-height: 25px;
+}
+/* contact################################################################ */
+.contact{
+    margin: 10px 30px 10px;
+}
+.contact-form h1{
+    font-family: sans-serif;
+    color: hwb(269deg 20% 51%);
+    font-size: 18px;
+    text-align: center;
+}
+.contact-form span{
+    color: #f9004d;
+    font-family: sans-serif;
+}
+.contact-form p{
+    font-family: sans-serif;
+    font-size: 16px;
+    line-height: 25px;
+    text-align: center;
+}
+.contact-form form input,
+form textarea{
+    width: 100%;
+    padding: 17px;
+    border: none;
+    outline: none;
+    background: #191919;
+    color: #fff;
+    font-size: 18px;
+    margin-bottom: 0.7rem;
+    border-radius: 10px;
+}
+.contact-form form .btn{
+    display: inline-block;
+    background: #f9004d;
+    font-size: 18px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-weight: 600;
+    border: 2px solid transparent;
+    cursor: pointer;
+    border-radius: 10px;
+    width: 100%;
+    transition: ease .20s;
+    position: relative;
+    color: #000;
+    /* left: 248px; */
+    top: 12px;
+    padding: 10px 50px;
+}
+.contact-form form .btn:hover{
+    border: 2px solid #f9004d;
+    background: transparent;
+    transform: scale(1.1);
+}
+/* responsive########################################## */
+
+/* tablet screen */
+@media only screen and (min-width: 768px){
+    .navbar-toggler-open, .navbar-toggler-close {
+        font-size: 4rem;
+        color: #fff;
+        transition: var(--transition);
+    }
+    .navbar-collapse {
+        width: 270px;
+    }
+    .nav-link {
+        font-size: 20px;
+    }
+    /* slide show */
+    .text h1 {
+        font-size: 25px;
+    }
+    .text p {
+        font-size: 20px;
+        line-height: 40px;
+    }
+    /* welcome */
+    .welcome h1 {
+        font-size: 25px;
+    }
+    .welcome p {
+        font-size: 20px;
+        line-height: 40px;
+    }
+    .welcome button {
+        font-size: 20px;
+        padding: 7px 15px;
+    }
+    /* mission */
+    .mission h1 {
+        font-size: 25px;
+    }
+    .mission p {
+        font-size: 20px;
+        line-height: 40px;
+    }
+    /* feature */
+    .feat-one .feat-inner i {
+        font-size: 30px;
+    }
+    .feat-one .feat-inner h1 {
+        font-size: 25px;
+    }
+    .feat-one .feat-inner p {
+        font-size: 20px;
+        line-height: 30px;
+    }
+    /* footer */
+    .footer-house{
+        display: flex;
+        margin: 10px 80px 10px;
+        gap: 70px;
+    }
+    .footer h1 {
+        position: relative;
+        border: 1px solid transparent;
+        width: 89%;
+        background-color: #f4511e;
+        margin: 40px;
+    }
+    .socials {
+        margin-left: 5px;
+    }
+    .socials h6 {
+       font-size: 13px;
+    }
+    .footer-bottom{
+        display: flex;
+        margin: 10px 30px 10px;
+        gap: 10px;
+    }
+    .copyright {
+        position: relative;
+        top: 0px;
+    }
+    /* About page############3 */
+    .about h1 {
+        font-size: 25px;
+    }
+    .about p {
+        font-size: 20px;
+        line-height: 40px;
+    }
+    /* Admission page############# */
+    .application h1 {
+        font-size: 25px;
+    }
+    .top h2 {
+        font-size: 25px;
+    }
+    .top p {
+        font-size: 20px;
+        line-height: 30px;
+    }
+    .bottom h3 {
+        font-size: 25px;
+    }
+    .bottom p{
+        font-size: 20px;
+        line-height: 30px;
+    }
+    /* Contact Page##################### */
+    .contact-form h1 {
+       font-size: 25px;
+    }
+    .contact-form p {
+        font-size: 20px;
+    }
+    .contact-form form{
+        margin-top: 30px;
+    }
+}
+
+/* responsive for Desktop */
+
+@media(min-width: 1000px){
+     /* navbar */
+     .navbar-toggler-close, .navbar-toggler-open{
+        display: none;
+    }
+    .navbar .container{
+        flex-direction: row;
+    }
+    .navbar-collapse{
+        position: relative;
+        transform: translateX(0);
+        width: 100%;
+        height: auto;
+        border-left: none;
+        padding: 0;
+        background-color: transparent;
+    }
+    .navbar-nav{
+        display: flex;
+        justify-content: flex-end;
+        margin-top: 0;
+    }
+    .nav-item{
+        margin: 0 0 0 3rem;
+    }
+    .nav-link{
+        color: #fff;
+    }
+    .nav-link:hover{
+        color: aquamarine;
+        opacity: 0.9;
+    }
+     /* slideshow */
+    .mySlides {
+        display: none;
+        align-items: center;
+        justify-content: center;
+    }
+    .mySlides img {
+        vertical-align: middle;
+        width: 100%;
+        height: 100vh;
+    }
+    /* welcome */
+
+    /* Feature */
+    .feat{
+        display: flex;
+    }
+    .feat-one{
+        width: 35%;
+        height: 350px;
+    }
+    /* footer############# */
+    .footer h1{
+        margin-left: 110px;
+        width: 82%;
+    }
+    .footer-house{
+        display: flex;
+        margin: 10px 80px 10px;
+        gap: 300px;
+        justify-content: center;
+        align-items: center;
+    }
+    .socials {
+        margin-left: 5px;
+    }
+    .socials h6 {
+       font-size: 10px;
+    }
+    .footer-bottom{
+        display: flex;
+        margin: 10px 30px 10px;
+        gap: 150px;
+        align-items: center;
+        justify-content: center;
+    }
+    .extralink{
+        gap: 20px;
+    }
+    .extralink a{
+        font-size: 10px;
+    }
+    .copyright {
+        position: relative;
+        top: 0px;
+    }
+    /* About######### */
+    .abt{
+        display: flex;
+    }
+    .about{
+        width: 50%;
+    }
+    .picture{
+        position: relative;
+        width: 50%;
+        top: 130px;
+    }
+    /* Admission */
+    .addmission{
+        display: flex;
+    }
+    .profile-pic{
+        width: 50%;
+    }
+    .admin{
+        width: 50%;
+        position: relative;
+        top: 50px;
+    }
+    /* contact */
+    .contact{
+       text-align: center;
+    }
+    .contact-form p{
+        font-size: 20px;
+    }
+    .contact-form form input,
+    form textarea{
+        font-size: 20px;
+        width: 80%;
+    }
+    .contact-form form .btn{
+        font-size: 20px;
+        width: 80%;
+    }
+    
+    
+}
